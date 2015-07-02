@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html lang="en" ng-app="ubernet" class="no-js lt-ie9 lt-ie8 lt-ie7">    <![endif]-->
+<!--[if IE 7]>          <html lang="en" ng-app="ubernet" class="no-js lt-ie9 lt-ie8">           <![endif]-->
+<!--[if IE 8]>          <html lang="en" ng-app="ubernet" class="no-js lt-ie9">                  <![endif]-->
+<!--[if gt IE 8]><!-->  <html lang="en" ng-app="ubernet" class="no-js">                     <!--<![endif]-->
+
+<head>
+    <title><%= title %> - <%= subtitle %></title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="<%= subtitle %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/posts.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!--STYLES END-->
+
+    <script src="/scripts.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="header-bar">
+        <div class="header container"><header class="inner">
+            <div class="left title">
+                <h1><%= title %></h1>
+                <h3><%= subtitle %></h3>
+            </div>
+            <div class="right">
+                <div class="timetable">
+                    <p><%- __('header.timestamp', { day: __('time.monday'), time: '<strong>9:05 AM</strong>' }) %></p>
+                    <p><a href="/#/timetable"><%- __('header.activity', '<strong>Electives</strong>') %></a></p>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </header></div>
+
+        <div class="nav container"><nav class="inner">
+            <div class="left">
+                <a href="#/home" title="Home" class="selected"><i class="fa fa-home"></i> <%= __('navbar.homeTab') %></a>
+                <a href="#/photos" title="Photos"><i class="fa fa-photo"></i> <%= __('navbar.photosTab') %></a>
+                <a href="#/people" title="People"><i class="fa fa-users"></i> <%= __('navbar.peopleTab') %></a>
+                <a href="#/cards" title="Cards"><i class="fa fa-tablet"></i> <%= __('navbar.cardsTab') %></a>
+                <a href="#/timetable" title="Timetable"><i class="fa fa-calendar"></i> <%= __('navbar.timetableTab') %></a>
+            </div>
+            <div class="right">
+                <a href="#/people/me" title="Profile"><i class="fa fa-user"></i> <%- __('person.name', {first: 'Tom', last: 'Barham'}) %></a>
+                <a href="#/teams" title="Your Team"><i class="fa fa-circle-o-notch"></i> <%= __('team.name', 'Green') %></a>
+                <a href="#/admin" title="Admin"><i class="fa fa-cogs"></i> <%= __('navbar.adminTab') %></a>
+            </div>
+            <div class="clear"></div>
+        </nav></div>
+    </div>
+
+    <div class="no-items" ng-show="false">
+        Oh no! It looks like your browser doesn't have Javascript enabled. Ubernet requires Javascript.
+    </div>
+
+    <div class="page container"><div class="inner">
+            <div ng-view></div>
+        </div></div>
+
+    <div class="push"></div>
+</div>
+
+<div class="footer container"><footer class="inner">
+    <p><%- __('footer.cms', '<a href="http://mrfishie.com/ubernet" target="_blank"><img src="images/ubernet.png" alt="&Uuml;bernet" title="&Uuml;bernet" />&Uuml;bernet</a>') %></p>
+    <p class="author"><%- __('footer.author', '<a href="http://mrfishie.com/" target="_blank"><img src="images/mrfishie.png" alt="mrfishie" title="mrfishie" />Tom Barham</a>') %></p>
+</footer></div>
+
+<!--TEMPLATES-->
+<script type="text/javascript" src="/jst.js"></script>
+<!--TEMPLATES END-->
+
+</body>

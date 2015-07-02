@@ -1,0 +1,176 @@
+@import "util";
+
+.post {
+    margin:50px 0;
+
+    .top {
+        background-color: #b3e5fc;
+    }
+    .main {
+        border:solid 1px #CCC;
+        border-top:none;
+    }
+    .middle {
+        padding:10px;
+
+        p {
+            margin:10px 0;
+        }
+
+        textarea {
+            border: none;
+            width:100%;
+            padding:0;
+            @include box-sizing(border-box);
+        }
+    }
+    .bottom {
+        background-color: #EEE;
+    }
+
+    .author {
+        font-weight:bold;
+    }
+
+    &.new-post {
+        .top {
+            a {
+                display:inline-block;
+                padding:10px;
+                text-decoration:none;
+            }
+            a:hover, a.active {
+                background-color:#81d4fa;
+            }
+            a.active {
+                cursor:default;
+            }
+        }
+
+        .post-pane {
+            display:none;
+        }
+        .post-pane.active {
+            display:block;
+        }
+
+        &.new-photo {
+            /*.top {
+                padding:10px;
+            }*/
+            .upload-hotspot {
+                border:dashed 5px #CCC;
+                padding:20px;
+            }
+        }
+
+        textarea {
+            min-height:3em;
+        }
+    }
+    &.old-post {
+        .right {
+            color:#666;
+            font-size:0.9em;
+            height:100%;
+            vertical-align:middle;
+        }
+
+        .top {
+            padding:10px;
+            h4, strong, p {
+                display:inline-block;
+            }
+        }
+
+        &.photo-group img {
+            width:32%;
+            display:inline-block;
+            vertical-align:top;
+            margin:2px;
+        }
+
+        .poll {
+            margin-top:10px;
+            .item {
+                border:solid 1px #CCC;
+                padding:10px;
+
+                .bar {
+                    border:solid 5px $primary;
+                    margin-top:10px;
+                    height:46px;
+                    @include box-sizing(border-box);
+
+                    .voters {
+                        margin:10px;
+                        overflow:hidden;
+                        height:calc(100% - 20px);
+                    }
+                }
+            }
+            .item:hover {
+                border-color:$primary;
+
+                .bar {
+                    background-color:#e1f5fe;
+                }
+            }
+        }
+
+        .actions {
+            font-size:0.9em;
+            margin:0 10px;
+            padding:10px 0;
+        }
+        .stats {
+            padding:10px;
+        }
+
+        .new-comment, .add-comment {
+            font-size:0.9em;
+        }
+        .new-comment {
+            min-height:1.1em;
+            width:calc(100% - 40px);
+            margin:10px;
+        }
+
+        .activity {
+            border-top:solid 1px #CCC;
+            .left i.fa {
+                color:$primary;
+            }
+
+            .action {
+                padding:10px;
+                &:nth-child(even) {
+                    background-color:#FCFCFC;
+                }
+                &:nth-child(odd) {
+                    background-color:#EEE;
+                }
+                .activity {
+                    border:solid 1px #CCC;
+                    margin-top:10px;
+                    margin-left:12px;
+                    font-size:0.9em;
+                }
+
+                .content p {
+                    display:inline-block;
+                }
+
+                .new-comment, .add-comment {
+                    margin:10px 0 0 12px;
+                    font-size:0.9em;
+                }
+            }
+        }
+    }
+
+    .upload-hotspot {
+        padding:20px;
+        border:dashed 5px #CCC;
+    }
+}

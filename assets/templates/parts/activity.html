@@ -1,0 +1,38 @@
+<div class="action">
+    <div class="left" ng-switch="topic.type">
+        <span ng-switch-when="like">
+            <i class="fa fa-thumbs-o-up"></i>
+            <user-link user="topic.author"></user-link> liked this.
+        </span>
+        <span ng-switch-default>
+            <i class="fa fa-comment"></i>
+            <user-link user="topic.author"></user-link>
+            <span class="content" ng-bind-html="topic.textContent"></span>
+        </span>
+    </div>
+    <div class="right">
+        <a href="javascript:void(0)" ng-click="" title="Like this comment">Like</a>
+        <a href="javascript:void(0)"
+           ng-click=""
+           title="View who liked this"><i class="fa fa-thumbs-o-up"></i> {{topic.likes.length}}</a> -
+        <span class="timestamp" am-time-ago="topic.createdAt"></span>
+    </div>
+    <div class="clear"></div>
+
+    <div ng-repeat="topic in topic.children | orderBy: '-createdAt' : true track by topic.id" track-by="id" class="activity" ng-include="'/templates/parts/activity.html'"></div>
+
+    <p class="add-comment" ng-show="!topic.showComment">
+        <a href="javascript:void(0)" ng-click="topic.showComment = true" title="Add a comment to this thread">
+            <i class="fa fa-plus"></i>
+            Add a comment
+        </a>
+    </p>
+    <textarea msd-elastic
+              ng-show="topic.showComment"
+              ng-model="topic.commentText"
+              ng-trim="false"
+              ng-keyup="$event.keyCode === 13 && !$event.shiftKey && addComment(topic)"
+              class="new-comment"
+              placeholder="Write a comment..."
+              ng-disabled="!topic.newCommentEnabled"></textarea>
+</div>

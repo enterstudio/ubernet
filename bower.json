@@ -1,0 +1,25 @@
+{
+  "name": "ubernet",
+  "version": "0.1.0",
+  "authors": [
+    "mrfishie <mrfishie101@hotmail.com>"
+  ],
+  "main": "app.js",
+  "keywords": [
+    "ubernet",
+    "network",
+    "social"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-sticky": "~1.0.1",
+    "font-awesome": "~4.3.0"
+  }
+}

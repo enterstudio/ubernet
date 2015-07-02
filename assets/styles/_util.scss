@@ -1,0 +1,19 @@
+@import "compass/css3";
+
+// Variables
+$primary: #04a9f4;
+$page-size: 1200px;
+$post-size: 900px;
+$footer-height: 60px;
+$footer-padding: 20px;
+$real-footer-height: $footer-height + ($footer-padding * 2);
+
+// Mixins
+@mixin center-page($max-width: $page-size) {
+    max-width:$max-width;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+
+    @include box-sizing(border-box);
+}

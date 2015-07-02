@@ -1,0 +1,148 @@
+{
+	"time": {
+		"today": "Today",
+		"yesterday": "Yesterday",
+		"minuteAgo": {
+			"one": "%s minute ago",
+			"other": "%s minutes ago"
+		},
+		"hourAgo": {
+			"one": "%s hour ago",
+			"other": "%s hours ago"
+		},
+		"dayAgo": {
+			"one": "%s day ago",
+			"other": "%s days ago"
+		},
+		"weekAgo": {
+			"one": "%s week ago",
+			"other": "%s weeks ago"
+		},
+		"monthAgo": {
+			"one": "%s month ago",
+			"other": "%s months ago"
+		},
+		"yearAgo": {
+			"one": "%s year ago",
+			"other": "%s years ago"
+		},
+		"sunday": "Sunday",
+		"monday": "Monday",
+		"tuesday": "Tuesday",
+		"wednesday": "Wednesday",
+		"thursday": "Thursday",
+		"friday": "Friday",
+		"saturday": "Saturday"
+	},
+	"person": {
+		"name": "{{first}} {{last}}",
+		"year": "Year %s",
+		"group": "%s Group"
+	},
+	"team": {
+		"name": "%s Team",
+		"smallName": "%s",
+		"year": "Year %s",
+		"genderMale": "Boys",
+		"genderFemale": "Girls",
+		"gender": "%s Group",
+		"value": "Valued at %s",
+		"cards": {
+			"one": "Collected %s card",
+			"other": "Collected %s cards"
+		}
+	},
+	"card": {
+		"title": "%s",
+		"description": "%s",
+		"rarityHigh": "Rare",
+		"rarityLow": "Common",
+		"footerValue": "{{rarity}} - worth {{value}}",
+		"footerWild": "{{fraction}}/{{total}} in the wild"
+	},
+	"topic": {
+		"postTitle": " ",
+		"photoTitle": " posted a photo",
+		"pollTitle": " asked a question",
+		"titleTimestamp": "%s",
+		"likeAction": "Like",
+		"commentAction": "Comment",
+		"likeTooltip": "Like this post",
+		"commentTooltip": "Comment on this post",
+        "commentLikeTooltip": "Like this comment",
+        "viewLikeTooltip": "View who liked this",
+		"singleLikeCount": "%s likes this.",
+		"twoLikeCount": "%s and %s like this.",
+		"multiRelatedLikeCount": "%s and %s like this.",
+		"multiLikeCount": {
+			"one": "%s person likes this.",
+			"other": "%s people like this."
+		},
+		"othersGroup": {
+			"one": "%s other",
+			"others": "%s others"
+		},
+        "noLikes": "Be the first to like this.",
+		"commentTimestamp": "%s",
+		"likeComment": "%s liked this.",
+		"addComment": "Add a comment",
+        "addCommentTooltip": "Add a comment to this thread",
+		"writeComment": "Write a comment..."
+	},
+	"header": {
+		"timestamp": "{{day}} {{{time}}}",
+		"activity": "Activity: %s"
+	},
+	"navbar": {
+		"homeTab": "Home",
+		"photosTab": "Photos",
+		"peopleTab": "People",
+		"cardsTab": "Cards",
+		"timetableTab": "Timetable",
+		"adminTab": "Admin"
+	},
+	"homeTab": {
+		"newPost": "Write Something",
+		"newPostPlaceholder": "Write something...",
+		"newPostButton": "Post",
+		"newPhoto": "Add Photo",
+		"newPoll": "Ask Question"
+	},
+	"photosTab": {
+		"uploadTitle": "Upload photos",
+		"uploadLink": "Drag or click to upload photos.",
+		"uploadButton": "Upload",
+		"groupTimestamp": "%s"
+	},
+	"peopleTab": {
+		"directorTitle": "Directors",
+		"leaderTitle": "Leaders",
+		"memberTitle": "Campers"
+	},
+	"cardsTab": {
+		"teamStat": "{{team}} worth %s",
+		"allStat": "All cards worth %s",
+		"wildTitle": "In the Wild (%s)",
+		"collectedTitle": "Collected (%s)",
+		"teamTitle": "{{team}} ({{cards}})"
+	},
+	"timetableTab": {
+		"multipleDays": "{{day1}} - {{day2}}"
+	},
+	"profileTab": {
+		"aboutTitle": "About Me",
+		"groupTitle": "Small Group"
+	},
+	"teamTab": {
+		"memberTitle": "Members",
+		"cardTitle": "Cards"
+	},
+	"footer": {
+		"cms": "Powered by %s",
+		"author": "Coded by %s"
+	},
+	"edit": "Edit",
+	"time.monday": "time.monday",
+	"header.timestamp": "header.timestamp",
+	"header.activity": "header.activity"
+}

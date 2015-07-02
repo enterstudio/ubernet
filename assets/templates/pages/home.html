@@ -1,0 +1,107 @@
+<post-tabs class="post new-post">
+    <post-pane title="Write Something" icon="fa-pencil">
+        <div class="middle">
+            <textarea msd-elastic
+                      placeholder="Write something..."
+                      ng-model="root.newPost"
+                      ng-trim="false"
+                      ng-keyup="postOnEnter && $event.keyCode === 13 && !$event.shiftKey && addTopic()"
+                      ng-disabled="!newPostEnabled"></textarea>
+        </div>
+        <div class="bottom">
+            <div class="left">Markdown is supported.</div>
+            <div class="right">
+                <label>
+                    <input type="checkbox" ng-model="root.postOnEnter" />
+                    Post on enter
+                </label>
+                <a href="javascript:void(0)" title="Post" class="button" ng-click="addTopic()">Post</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </post-pane>
+
+    <post-pane title="Add Photo" icon="fa-photo" button="Upload" click="">
+        <div class="middle">
+            <div class="upload-hotspot">
+                <a href="javascript:void(0)" ng-click="" title="Upload photos">Drag or click to upload photos.</a>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="right">
+                <a href="javascript:void(0)" title="Upload" class="button" ng-click="">Upload</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </post-pane>
+</post-tabs>
+
+<div ng-show="!topics.length" class="no-items">
+    No posts just yet.
+</div>
+<div ng-repeat="topic in topics | orderBy:'-createdAt' track by topic.id"
+     ng-if="['post', 'poll', 'photo'].indexOf(topic.type) !== -1"
+     class="post old-post">
+    <div class="top">
+        <div class="left">
+            <h4><user-link user="topic.author"></user-link></h4>
+            <span class="subtitle" ng-switch="topic.type">
+                <span ng-switch-when="poll"> asked a question</span>
+                <span ng-switch-when="photo"> posted a photo</span>
+                <span ng-switch-default> </span>
+            </span>
+        </div>
+        <div class="right">
+            <a href="javascript:void(0)" ng-click="topic.delete()">Delete</a> -
+            exactly <span class="timestamp" am-time-ago="topic.createdAt"></span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="main">
+        <div class="middle" ng-switch="topic.type">
+            <div ng-bind-html="topic.textContent"></div>
+            <div ng-switch-when="poll" class="poll">
+                <div ng-repeat="item in topic.pollOptions" class="item">
+                    <div class="name">{{item.name}}</div>
+                    <div class="bar" style="width:{{item.voters.length / topic.totalVotes * 100}}">
+                        <div class="voters">
+                            <user-link ng-repeat="voter in item.voters" user="voter"></user-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img ng-switch-when="photo" ng-src="{{topic.imgSrc}}" alt="{{topic.textContent}}" width="100%" />
+        </div>
+        <div class="actions">
+            <a href="javascript:void(0)" ng-click="" title="Like this post">Like</a> -
+            <a href="javascript:void(0)" ng-click="" title="Comment on this post">Comment</a>
+        </div>
+        <div class="bottom">
+            <div class="stats">
+                <i class="fa fa-thumbs-o-up"></i>
+                <span ng-switch="topic.likeFooter.type">
+                    <span ng-switch-when="singleLikeCount">
+                        <user-link user="topic.likeFooter.params[0]"></user-link> likes this.
+                    </span>
+                    <span ng-switch-when="twoLikeCount">
+                        <user-link user="topic.likeFooter.params[0]"></user-link> and
+                        <user-link user="topic.likeFooter.params[1]"></user-link> like this.
+                    </span>
+                    <span ng-switch-when="multiRelatedLikeCount">
+                        <user-link user="topic.likeFooter.params[0]"></user-link> and
+                        {{topic.likeFooter.params[1]}} others like this.
+                    </span>
+                    <span ng-switch-default>Be the first to like this.</span>
+                </span>
+            </div>
+            <div ng-repeat="topic in topic.children | orderBy: '-createdAt' : true track by topic.id" class="activity" ng-include="'/templates/parts/activity.html'"></div>
+            <textarea msd-elastic
+                      class="new-comment"
+                      placeholder="Write a comment..."
+                      ng-model="topic.commentText"
+                      ng-trim="false"
+                      ng-keyup="$event.keyCode === 13 && !$event.shiftKey && addComment(topic)"
+                      ng-disabled="!topic.newCommentEnabled"></textarea>
+        </div>
+    </div>
+</div>
