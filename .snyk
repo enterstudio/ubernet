@@ -1,0 +1,101 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.3
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - sails > connect > compression > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > body-parser > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > express-session > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-index > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > morgan > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-static > send > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > connect-timeout > debug:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:hawk:20160119':
+    - debowerify > bower > bower-registry-client > request > hawk:
+        patched: '2019-04-11T07:03:29.270Z'
+    - debowerify > bower > request > hawk:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:http-signature:20150122':
+    - debowerify > bower > bower-registry-client > request > http-signature:
+        patched: '2019-04-11T07:03:29.270Z'
+    - debowerify > bower > request > http-signature:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:lodash:20180130':
+    - sails-disk > waterline-cursor > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails-disk > waterline-criteria > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+    - starmapjs > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > waterline > switchback > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > sails-disk > waterline-cursor > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > sails-disk > waterline-criteria > lodash:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:mime:20170907':
+    - debowerify > bower > request > form-data > mime:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-static > send > mime:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:minimatch:20160620':
+    - debowerify > bower > glob > minimatch:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:ms:20170412':
+    - sails > connect > connect-timeout > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > connect-timeout > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > body-parser > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-static > send > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > express-session > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > compression > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > morgan > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-index > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-static > send > debug > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-favicon > ms:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:negotiator:20160616':
+    - sails > connect > compression > accepts > negotiator:
+        patched: '2019-04-11T07:03:29.270Z'
+    - sails > connect > serve-index > accepts > negotiator:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:qs:20140806-1':
+    - sails > grunt-contrib-watch > tiny-lr-fork > qs:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:request:20160119':
+    - debowerify > bower > bower-registry-client > request:
+        patched: '2019-04-11T07:03:29.270Z'
+    - debowerify > bower > request:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:semver:20150403':
+    - debowerify > bower > semver:
+        patched: '2019-04-11T07:03:29.270Z'
+    - debowerify > bower > update-notifier > semver-diff > semver:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:shell-quote:20160621':
+    - debowerify > bower > shell-quote:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:tunnel-agent:20170305':
+    - debowerify > bower > request > tunnel-agent:
+        patched: '2019-04-11T07:03:29.270Z'
+    - debowerify > bower > bower-registry-client > request > tunnel-agent:
+        patched: '2019-04-11T07:03:29.270Z'
+  'npm:uglify-js:20151024':
+    - debowerify > bower > handlebars > uglify-js:
+        patched: '2019-04-11T07:03:29.270Z'
